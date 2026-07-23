@@ -1,0 +1,39 @@
+schema_version = "1.3"
+artifacts = ["/app/report.json"]
+
+[task]
+name = "dynamo/log-report"
+description = "Parse an Apache access log and generate a JSON report with request counts, status codes, and response size statistics."
+
+[tasks]
+log-report = { instruction = "instruction.md", verifier = "tests/test_outputs.py" }
+
+[metadata]
+category = "Data Processing and ETL"
+subcategory = "file_format_parsing_and_serialization"
+task_objective = ["transform", "generate"]
+artifact_type = ["text_or_log_file", "generated_output_artifact"]
+expert_time_estimate_hours = 0.3
+model_tested = "GPT-5.4"
+agent_tested = "Terminus-2"
+difficulty_explanation = "Requires parsing standard Apache combined log format, aggregating counts by endpoint and status code, and computing total/average response sizes - basic string manipulation and JSON serialization."
+solution_explanation = "Use Python to parse each log line, extract request path, status code, and response size, aggregate using dictionaries, output JSON report."
+verification_explanation = "Verifier parses report.json and validates counts, status distributions, and statistics match expected values computed from input log."
+
+[verifier]
+timeout_sec = 600.0
+collect = []
+
+[verifier.env]
+
+[agent]
+timeout_sec = 600.0
+
+[environment]
+build_timeout_sec = 600.0
+cpus = 1
+memory_mb = 2048
+storage_mb = 10240
+gpus = 0
+allow_internet = true
+mcp_servers = []

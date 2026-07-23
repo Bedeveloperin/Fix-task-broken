@@ -1,0 +1,123 @@
+Trial log-report__FtZjgRH failed: Docker compose command failed for environment log-report. Command: docker compose --project-name log-report__ftzjgrh__env --project-directory /mnt/c/project-dynamo/log-report/environment -f /tmp/tmpfw08u9x8/log-report__FtZjgRH__env-docker-compose-resources.json -f /home/dk063/.local/share/uv/tools/harbor/lib/python3.14/site-packages/harbor/environments/docker/docker-compose-build.yaml -f /tmp/tmp9l_wlb88/docker-compose-environment.json -f /tmp/tmpy2nnwnw5/docker-compose-mounts.json build. Return code: 1. Stdout: time="2026-07-23T10:56:06Z" level=warning msg="Docker Compose is configured to build using Bake, but buildx isn't installed"
+#0 building with "default" instance using docker driver
+
+#1 [main internal] load build definition from Dockerfile
+#1 transferring dockerfile: 313B 0.0s done
+#1 DONE 0.0s
+
+#2 [main internal] load metadata for public.ecr.aws/docker/library/python:3.13-slim-bookworm@sha256:01f42367a0a94ad4bc17111776fd66e3500c1d87c15bbd6055b7371d39c124fb
+#2 DONE 0.1s
+
+#3 [main internal] load .dockerignore
+#3 transferring context: 2B 0.0s done
+#3 DONE 0.1s
+
+#4 [main internal] load build context
+#4 transferring context: 2B 0.1s done
+#4 DONE 0.3s
+
+#5 [main 1/5] FROM public.ecr.aws/docker/library/python:3.13-slim-bookworm@sha256:01f42367a0a94ad4bc17111776fd66e3500c1d87c15bbd6055b7371d39c124fb
+#5 resolve public.ecr.aws/docker/library/python:3.13-slim-bookworm@sha256:01f42367a0a94ad4bc17111776fd66e3500c1d87c15bbd6055b7371d39c124fb
+#5 resolve public.ecr.aws/docker/library/python:3.13-slim-bookworm@sha256:01f42367a0a94ad4bc17111776fd66e3500c1d87c15bbd6055b7371d39c124fb 0.3s done
+#5 CANCELED
+
+#6 [main 2/5] WORKDIR /app
+#6 CACHED
+
+#7 [main 3/5] RUN pip install --no-cache-dir     pytest==8.3.5     pytest-json-ctrf==0.3.2
+#7 CACHED
+
+#8 [main 4/5] COPY tests/ /app/tests/
+#8 CACHED
+
+#9 [main 5/5] COPY data/ /app/data/
+#9 ERROR: failed to calculate checksum of ref vuqi36xvr40t88z615s4uaq43::6abd0p57sru9n5prtwfwp8gyu: "/data": not found
+------
+ > [main 5/5] COPY data/ /app/data/:
+------
+failed to solve: failed to compute cache key: failed to calculate checksum of ref vuqi36xvr40t88z615s4uaq43::6abd0p57sru9n5prtwfwp8gyu: "/data": not found
+. Stderr: None. 
+Collecting main service artifacts
+Failed to download artifact '/app/report.json' from service 'main' (best-effort)
+Traceback (most recent call last):
+  File "/home/dk063/.local/share/uv/tools/harbor/lib/python3.14/site-packages/harbor/trial/trial.py", line 351, in run
+    await self._prepare()
+  File "/home/dk063/.local/share/uv/tools/harbor/lib/python3.14/site-packages/harbor/trial/trial.py", line 385, in _prepare
+    await self._setup_agent_environment()
+  File "/home/dk063/.local/share/uv/tools/harbor/lib/python3.14/site-packages/harbor/trial/trial.py", line 1148, in _setup_agent_environment
+    await self._start_agent_environment()
+  File "/home/dk063/.local/share/uv/tools/harbor/lib/python3.14/site-packages/harbor/trial/trial.py", line 1154, in _start_agent_environment
+    await asyncio.wait_for(
+    ...<4 lines>...
+    )
+  File "/usr/lib/python3.14/asyncio/tasks.py", line 488, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "/home/dk063/.local/share/uv/tools/harbor/lib/python3.14/site-packages/harbor/environments/docker/docker.py", line 891, in start
+    await self._run_docker_compose_command(["build"])
+  File "/home/dk063/.local/share/uv/tools/harbor/lib/python3.14/site-packages/harbor/environments/docker/docker.py", line 656, in _run_docker_compose_command
+    raise RuntimeError(
+    ...<5 lines>...
+    )
+RuntimeError: Docker compose command failed for environment log-report. Command: docker compose --project-name log-report__ftzjgrh__env --project-directory /mnt/c/project-dynamo/log-report/environment -f /tmp/tmpfw08u9x8/log-report__FtZjgRH__env-docker-compose-resources.json -f /home/dk063/.local/share/uv/tools/harbor/lib/python3.14/site-packages/harbor/environments/docker/docker-compose-build.yaml -f /tmp/tmp9l_wlb88/docker-compose-environment.json -f /tmp/tmpy2nnwnw5/docker-compose-mounts.json build. Return code: 1. Stdout: time="2026-07-23T10:56:06Z" level=warning msg="Docker Compose is configured to build using Bake, but buildx isn't installed"
+#0 building with "default" instance using docker driver
+
+#1 [main internal] load build definition from Dockerfile
+#1 transferring dockerfile: 313B 0.0s done
+#1 DONE 0.0s
+
+#2 [main internal] load metadata for public.ecr.aws/docker/library/python:3.13-slim-bookworm@sha256:01f42367a0a94ad4bc17111776fd66e3500c1d87c15bbd6055b7371d39c124fb
+#2 DONE 0.1s
+
+#3 [main internal] load .dockerignore
+#3 transferring context: 2B 0.0s done
+#3 DONE 0.1s
+
+#4 [main internal] load build context
+#4 transferring context: 2B 0.1s done
+#4 DONE 0.3s
+
+#5 [main 1/5] FROM public.ecr.aws/docker/library/python:3.13-slim-bookworm@sha256:01f42367a0a94ad4bc17111776fd66e3500c1d87c15bbd6055b7371d39c124fb
+#5 resolve public.ecr.aws/docker/library/python:3.13-slim-bookworm@sha256:01f42367a0a94ad4bc17111776fd66e3500c1d87c15bbd6055b7371d39c124fb
+#5 resolve public.ecr.aws/docker/library/python:3.13-slim-bookworm@sha256:01f42367a0a94ad4bc17111776fd66e3500c1d87c15bbd6055b7371d39c124fb 0.3s done
+#5 CANCELED
+
+#6 [main 2/5] WORKDIR /app
+#6 CACHED
+
+#7 [main 3/5] RUN pip install --no-cache-dir     pytest==8.3.5     pytest-json-ctrf==0.3.2
+#7 CACHED
+
+#8 [main 4/5] COPY tests/ /app/tests/
+#8 CACHED
+
+#9 [main 5/5] COPY data/ /app/data/
+#9 ERROR: failed to calculate checksum of ref vuqi36xvr40t88z615s4uaq43::6abd0p57sru9n5prtwfwp8gyu: "/data": not found
+------
+ > [main 5/5] COPY data/ /app/data/:
+------
+failed to solve: failed to compute cache key: failed to calculate checksum of ref vuqi36xvr40t88z615s4uaq43::6abd0p57sru9n5prtwfwp8gyu: "/data": not found
+. Stderr: None. 
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dk063/.local/share/uv/tools/harbor/lib/python3.14/site-packages/harbor/trial/artifact_handler.py", line 330, in _download_artifact
+    await source_env.service_download_file(
+    ...<3 lines>...
+    )
+  File "/home/dk063/.local/share/uv/tools/harbor/lib/python3.14/site-packages/harbor/environments/docker/docker.py", line 1052, in service_download_file
+    await self.download_file(source_path, target_path)
+  File "/home/dk063/.local/share/uv/tools/harbor/lib/python3.14/site-packages/harbor/environments/docker/docker.py", line 1037, in download_file
+    await self._platform.download_file(source_path, target_path)
+  File "/home/dk063/.local/share/uv/tools/harbor/lib/python3.14/site-packages/harbor/environments/docker/docker_unix.py", line 185, in download_file
+    await self._env._run_docker_compose_command(
+    ...<2 lines>...
+    )
+  File "/home/dk063/.local/share/uv/tools/harbor/lib/python3.14/site-packages/harbor/environments/docker/docker.py", line 656, in _run_docker_compose_command
+    raise RuntimeError(
+    ...<5 lines>...
+    )
+RuntimeError: Docker compose command failed for environment log-report. Command: docker compose --project-name log-report__ftzjgrh__env --project-directory /mnt/c/project-dynamo/log-report/environment -f /tmp/tmpfw08u9x8/log-report__FtZjgRH__env-docker-compose-resources.json -f /home/dk063/.local/share/uv/tools/harbor/lib/python3.14/site-packages/harbor/environments/docker/docker-compose-build.yaml -f /tmp/tmp9l_wlb88/docker-compose-environment.json -f /tmp/tmpy2nnwnw5/docker-compose-mounts.json cp main:/app/report.json jobs/2026-07-23__10-56-03/log-report__FtZjgRH/artifacts/app/report.json. Return code: 1. Stdout: no container found for service "main"
+. Stderr: None. 
+Not retrying trial because the maximum number of retries has been reached

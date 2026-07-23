@@ -1,0 +1,61 @@
+{
+    "schema_version": 2,
+    "created_at": "2026-07-23T12:25:27.455495Z",
+    "harbor": {
+        "version": "0.20.0",
+        "is_editable": false
+    },
+    "n_concurrent_trials": 4,
+    "retry": {
+        "max_retries": 0,
+        "exclude_exceptions": [
+            "RewardFileEmptyError",
+            "AgentTimeoutError",
+            "VerifierTimeoutError",
+            "ModelNotFoundError",
+            "ApiUsageLimitError",
+            "VerifierOutputParseError",
+            "AgentAuthenticationError",
+            "AgentSafetyRefusalError",
+            "RewardFileNotFoundError"
+        ],
+        "wait_multiplier": 1.0,
+        "min_wait_sec": 1.0,
+        "max_wait_sec": 60.0
+    },
+    "trials": [
+        {
+            "schema_version": 1,
+            "task": {
+                "name": "log-report",
+                "type": "local",
+                "digest": "sha256:2445e1b12e2ad977dc2a5c623204f0f91dba2c939c5f885d334433d6c88430ac",
+                "path": "log-report"
+            },
+            "install_only": false,
+            "timeout_multiplier": 1.0,
+            "agent": {
+                "name": "oracle",
+                "skills": [],
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [],
+                "kwargs": {},
+                "mcp_servers": []
+            },
+            "skills": [],
+            "environment": {
+                "type": "docker",
+                "force_build": false,
+                "delete": true,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false
+            }
+        }
+    ]
+}
